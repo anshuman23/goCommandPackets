@@ -1,7 +1,5 @@
-# goCommandPackets
-A command line utility based on gopacket and libpcap-dev to scan and inspect packets and internet traffic
-
-![alt text](imgs/logo_gcp.png)
+## goCommandPackets ![alt text](imgs/logo_gcp.png)
+##### A command line utility based on gopacket and libpcap-dev to scan and inspect packets and internet traffic
 
 ### Dependencies 
 - ```gopacket```
