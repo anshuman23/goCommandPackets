@@ -65,23 +65,25 @@ func main() {
         choice_input = strings.TrimSuffix(choice_input,"\n")
 	choice, _ := strconv.ParseInt(choice_input, 10, 64)
 	ip_bool, tcp_bool, filter_bool := 0,0,0
-	if choice == 0 {
-		ip_bool = 1
-	} else if choice == 1 {
-		tcp_bool = 1
-	} else if choice == 2 {
-		ip_bool = 1
-		tcp_bool = 1
-	} else if choice == 3 {
-		filter_bool = 1
-		reader := bufio.NewReader(os.Stdin)
-		fmt.Println("\nPlease enter filter: ")
-		filter, _ := reader.ReadString('\n')
-		filter = strings.TrimSuffix(filter, "\n") 
-		err := handle.SetBPFFilter(filter)
-		if err == nil {
-			fmt.Println("[INFO] Filter applied successfully!")
-		}
+
+	switch choice {
+		case 0:
+			ip_bool = 1
+	 	case 1:
+			tcp_bool = 1
+	 	case 2:
+			ip_bool = 1
+			tcp_bool = 1
+		case 3:
+			filter_bool = 1
+			reader := bufio.NewReader(os.Stdin)
+			fmt.Println("\nPlease enter filter: ")
+			filter, _ := reader.ReadString('\n')
+			filter = strings.TrimSuffix(filter, "\n") 
+			err := handle.SetBPFFilter(filter)
+			if err == nil {
+				fmt.Println("\n[INFO] Filter applied successfully!")
+			}
 	}
 
 	packetSource := gopacket.NewPacketSource(handle, handle.LinkType())
