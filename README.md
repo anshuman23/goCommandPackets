@@ -21,8 +21,7 @@ Therefore to run the script, type the following in terminal:  `sudo -E go run gc
 
 There are a number of things that the user can request for:
 
-* First submit the SNO of your connection interface (wlp6s0 in this example):
-![alt text](imgs/gcp2_edited.png)
+* First submit the SNO of your connection interface (wlp6s0 in this example)
 * Then choose any of the four currently available options: IP Layer traffic, TCP layer traffic, Both TCP/IP traffic and using filters for getting a particular set of packets from the traffic: (As an example we choose Option 3 with filter `tcp and port 443`):
 ![alt text](imgs/gcp1_edited.png)
 * Finally inspect the traffic! 
