@@ -4,7 +4,7 @@
 ### Dependencies 
 - ```gopacket```
 - ```tablewriter```
-- ```libpcap-dev```
+- ```libpcap```
 
 ##### To install these run the following commands (Ubuntu):
 - ```go get github.com/google/gopacket```
